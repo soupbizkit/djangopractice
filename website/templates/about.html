@@ -1,7 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>About template</h1>
-{{ request.user }}
-<h2>this is the part after the user</h2>
+    <h1>About template</h1>
+    {{ request.user }}
+    <h2>this is the part after the user</h2>
+
+<p>{{ my_text }}, {{ my_number }}</p>
+
+
+<ul>
+{% for my_sub_item in my_list %}
+    {% if my_sub_item ==  24%}
+    <li>{{ my_sub_item|add:22 }}</li>
+    {% else %}
+    <li>{{ my_sub_item }}</li>
+    {% endif %}
+    
+{% endfor %}
+</ul>
 {% endblock %}
